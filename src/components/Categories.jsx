@@ -26,7 +26,7 @@ function Categories() {
 // get assemblies
   const getAssemby = async () => {
     const result = await getAssembliesAPI(keyword)
-    console.log(result);
+    // console.log(result);
     if (result.status === 200) {
       setAssembly(result?.data)
     } else {
@@ -37,7 +37,7 @@ function Categories() {
   // get categories
   const getCatogory = async () => {
     const result = await getCategoryAPI(searchkey)
-    console.log(result);
+    // console.log(result);
     if (result.status === 200) {
       setCategory(result?.data)
     } else {
@@ -47,7 +47,7 @@ function Categories() {
   // get sub categories
   const getSubcats = async () => {
     const result = await getSubcategoryAPI(search)
-    console.log(result);
+    // console.log(result);
     if (result.status === 200) {
       setSubcats(result?.data)
     } else {

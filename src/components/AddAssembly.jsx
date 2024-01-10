@@ -49,7 +49,7 @@ function AddAssembly({ dispaydata }) {
                     </div>
                     <div className='md:flex justify-between pt-4'>
                         <div className='flex md:mb-0 mb-4'><p className='brightness-200 text-sm mt-1'>Count</p> <input onChange={(e) => setProject({ ...project, quantity: e.target.value })} type="text" className=' ml-4 w-[230px] h-[35px] rounded border' placeholder='1250' name="" id="" /></div>
-                        <div className='flex '><p className='brightness-200 text-sm mt-1'>Length in M</p> <input onChange={(e) => setProject({ ...project, length: e.target.value })} type="text" className='ml-4 w-[230px] h-[35px] rounded border' placeholder='1250' name="" id="" /></div>
+                        <div className='flex '><p className='brightness-200 text-sm mt-1'>Length in M</p> <input onChange={(e) => setProject({ ...project, length: e.target.value })} type="number" className='ml-4 w-[230px] h-[35px] rounded border' placeholder='1250' name="" id="" /></div>
 
                     </div>
                     <div className='pt-5'>

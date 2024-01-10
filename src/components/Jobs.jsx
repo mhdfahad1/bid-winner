@@ -7,7 +7,7 @@ function Jobs() {
     const [projects, setProjects] = useState([])
     const getProjects = async () => {
         const result = await getProjectsAPI(search)
-        console.log(result);
+        // console.log(result);
         if (result.status === 200) {
             setProjects(result?.data)
         } else {

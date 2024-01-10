@@ -11,68 +11,68 @@ function Menu({setValue}) {
             </div>
             <hr />
             <div className=' w-100 h-[78px] bg-white'>
-                <img src={note} alt="" className='ml-6 pt-4'/>
-                <p className='text-xs md:text-sm text-black ml-4 pt-1'>Notes</p>
+                <img src={note} alt="" className='md:ml-6 ml-3 pt-4'/>
+                <p className='text-xs md:text-sm text-black md:ml-4 ml-2 pt-1'>Notes</p>
             </div>
             <hr />
             <div className=' w-100 h-[58px] bg-slate-200'>
-                <img src={note} alt="" className='ml-6 pt-3'/>
+                <img src={note} alt="" className='md:ml-6 ml-3 pt-3'/>
                 <p className='text-xs md:text-sm text-black ml-4 pt-1'>Take off</p>
             </div>
             <hr />
             <div className=' w-100 h-[58px] bg-white'>
-                <img src={note} alt="" className='ml-6 pt-3'/>
-                <p className='text-xs md:text-sm text-black ml-4 pt-1'>Extension</p>
+                <img src={note} alt="" className='md:ml-6 ml-3 pt-3'/>
+                <p className='text-xs md:text-sm text-black md:ml-4 ml-2 pt-1'>Extension</p>
             </div>
             <hr />
             <div className=' w-100 h-[58px] bg-white'>
-                <img src={note} alt="" className='ml-6 pt-3'/>
-                <p className='text-xs md:text-sm text-black ml-5 pt-1'>DiLb</p>
+                <img src={note} alt="" className='md:ml-6 ml-3 pt-3'/>
+                <p className='text-xs md:text-sm text-black md:ml-5 ml-2 pt-1'>DiLb</p>
             </div>
             <hr />
             <div className=' w-100 h-[58px] bg-white'>
-                <img src={note} alt="" className='ml-6 pt-3'/>
-                <p className='text-xs md:text-sm text-black ml-5 pt-1'>IncLb</p>
+                <img src={note} alt="" className='md:ml-6 ml-3 pt-3'/>
+                <p className='text-xs md:text-sm text-black md:ml-5 ml-2 pt-1'>IncLb</p>
             </div>
             <hr />
             <div className=' w-100 h-[58px] bg-white'>
-                <img src={note} alt="" className='ml-6 pt-3'/>
-                <p className='text-xs md:text-sm text-black ml-5 pt-1'>LbFac</p>
+                <img src={note} alt="" className='md:ml-6 ml-3 pt-3'/>
+                <p className='text-xs md:text-sm text-black md:ml-5 ml-2 pt-1'>LbFac</p>
             </div>
             <hr />
             <div className=' w-100 h-[58px] bg-white'>
-                <img src={note} alt="" className='ml-6 pt-3'/>
-                <p className='text-xs md:text-sm text-black ml-5 pt-1'>LbEsc</p>
+                <img src={note} alt="" className='md:ml-6 ml-3 pt-3'/>
+                <p className='text-xs md:text-sm text-black md:ml-5 ml-2 pt-1'>LbEsc</p>
             </div>
             <hr />
             <div className=' w-100 h-[58px] bg-white'>
-                <img src={note} alt="" className='ml-6 pt-3'/>
-                <p className='text-xs md:text-sm text-black ml-5 pt-1'>IndLb</p>
+                <img src={note} alt="" className='md:ml-6 ml-3 pt-3'/>
+                <p className='text-xs md:text-sm text-black md:ml-5 ml-2 pt-1'>IndLb</p>
             </div>
             <hr />
             <div className=' w-100 h-[58px] bg-white'>
-                <img src={note} alt="" className='ml-6 pt-3'/>
-                <p className='text-xs md:text-sm text-black ml-5 pt-1'>Sbcon</p>
+                <img src={note} alt="" className='md:ml-6 ml-3 pt-3'/>
+                <p className='text-xs md:text-sm text-black md:ml-5 ml-2 pt-1'>Sbcon</p>
             </div>
             <hr />
             <div className=' w-100 h-[58px] bg-white'>
-                <img src={note} alt="" className='ml-6 pt-3'/>
-                <p className='text-xs md:text-sm text-black ml-5 pt-1'>Gen Exp</p>
+                <img src={note} alt="" className='md:ml-6 ml-3 pt-3'/>
+                <p className='text-xs md:text-sm text-black md:ml-5 ml-2 pt-1'>Gen Exp</p>
             </div>
             <hr />
             <div className=' w-100 h-[58px] bg-white'>
-                <img src={note} alt="" className='ml-6 pt-3'/>
-                <p className='text-xs md:text-sm text-black ml-5 pt-1'>Qt Mat</p>
+                <img src={note} alt="" className='md:ml-6 ml-3 pt-3'/>
+                <p className='text-xs md:text-sm text-black md:ml-5 ml-2 pt-1'>Qt Mat</p>
             </div>
             <hr />
             <div className=' w-100 h-[58px] bg-white'>
-                <img src={note} alt="" className='ml-6 pt-3'/>
-                <p className='text-xs md:text-sm text-black ml-5 pt-1'>Brk Dwn</p>
+                <img src={note} alt="" className='md:ml-6 ml-3 pt-3'/>
+                <p className='text-xs md:text-sm text-black md:ml-5 ml-2 pt-1'>Brk Dwn</p>
             </div>
             <hr />
             <div className=' w-100 h-[58px] bg-white'>
-                <img src={note} alt="" className='ml-6 pt-3'/>
-                <p className='text-xs md:text-sm text-black ml-5 pt-1'>DiLb</p>
+                <img src={note} alt="" className='md:ml-6 ml-3 pt-3'/>
+                <p className='text-xs md:text-sm text-black md:ml-5 ml-2 pt-1'>DiLb</p>
             </div>
         </div>
     )
