@@ -24,7 +24,7 @@ function Header() {
                 <Nav.Link className=' text-white ml-3'>Database</Nav.Link>
                 <Nav.Link className=' text-white ml-3'>Tutorials</Nav.Link>
               </div>
-              <div className='flex justify-end ml-16'>
+              <div className='flex justify-end ml-10'>
                 <Nav.Link className=' text-white -mt-3'>
                   <div className='flex w-[230px] h-[50px] bg-blue-950 border pl-1 pt-1'>
                     <div>

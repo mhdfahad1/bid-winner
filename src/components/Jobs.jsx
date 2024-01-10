@@ -29,7 +29,7 @@ function Jobs() {
     }, [projects])
     return (
         <div>
-            <div className='flex justify-between md:pt-10'>
+            <div className='md:flex md:justify-between md:pt-10 pt-5 md:p-0 p-4'>
                 <h2 className='text-sm md:text-xl mt-1 ml-2 font-bold'>Job</h2>
                 <div className='flex justify-between'>
                     <h1 className='mt-2 text-sm brightness-200 mr-4 mb-2'>Quote Status</h1>
@@ -39,7 +39,7 @@ function Jobs() {
                 </div>
 
             </div>
-            <div className='md:w-[630px] h-[206px] bg-white mt-7 pl-4 rounded'>
+            <div className='md:w-[630px] w-[380px] md:ml-0 ml-3 h-[206px] bg-white mt-7 pl-4 rounded'>
                 <div className='flex justify-between'>
                     <div>
                         <div className='flex md:justify-between '>
@@ -90,8 +90,8 @@ function Jobs() {
                 <button className='ml-2 w-[140px] rounded h-[30px] text-sm bg-white shadow border text-blue-700'>import<i class="fa-solid fa-arrow-down ml-2"></i></button>
             </div>
 
-            <div className='md:w-[630px] md:h-[530px] h-[200px] bg-white mt-7 pl-3 rounded'>
-                <table style={{ width: '100%' }}>
+            <div className='md:w-[630px] md:h-[530px] h-[500px] bg-white mt-7 md:pl-3 pl-5 md:p-0 p-4 rounded'>
+                <table className='w-100' style={{ width: '100%' }}>
                     <thead>
                         <tr>
                             <th className='brightness-200 font-medium md:text-sm text-xs' >Sl No</th>

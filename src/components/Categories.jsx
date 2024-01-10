@@ -63,7 +63,7 @@ function Categories() {
   return (
 
     <div className='flex'>
-      <Menu />
+      <Menu setValue={setValue}/>
       {value === 1 ?
         <div className=' p-7 w-[500px] h-[879px]'>
           <div className='md:flex md:justify-between'>

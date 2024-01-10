@@ -2,10 +2,10 @@ import React from 'react'
 import back from '../images/ArrowUUpLeft.png'
 import note from '../images/Vector.png'
 
-function Menu() {
+function Menu({setValue}) {
     return (
-        <div className='w-[72px] md:w-[82px] h-[910px] bg-white'>
-            <div className='bg-blue-600 w-100 h-[58px]'>
+        <div className='w-[75px] md:w-[82px] h-[910px] bg-white'>
+            <div onClick={()=>setValue(1)} className='bg-blue-600 w-100 h-[58px]'>
                 <img src={back} alt="" className='ml-6 pt-2'/>
                 <p className=' text-xs md:text-sm text-white'>Back to Jobs</p>
             </div>
