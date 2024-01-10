@@ -2,7 +2,6 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from '../image 9.png'
 import elipse from '../Ellipse 1.png'
 
@@ -25,18 +24,22 @@ function Header() {
                 <Nav.Link className=' text-white ml-3'>Database</Nav.Link>
                 <Nav.Link className=' text-white ml-3'>Tutorials</Nav.Link>
               </div>
-              <div className='flex justify-end'>
-                {/* <select name="" id="">
-                <option value=""selected hidden><div className='flex border'>
-                  <div className='text-sm'>
-                    <b>Jane Cooper</b><br />
-                    janecooper@gmail.com
+              <div className='flex justify-end ml-16'>
+                <Nav.Link className=' text-white -mt-3'>
+                  <div className='flex w-[230px] h-[50px] bg-blue-950 border pl-1 pt-1'>
+                    <div>
+                      <h1 className='text-sm font-semibold text-right'>Jane Cooper</h1><br />
+                      <p className='text-sm -mt-5 text-right'>janecooper@gmail.com</p>
+                    </div>
+                    <div>
+                      <img src={elipse} alt="" />
+                    </div>
+
                   </div>
-                  <div>
-                    <img src={elipse} alt="" />
-                  </div>
-                </div></option>
-                </select> */}
+                </Nav.Link>
+
+                <Nav.Link className=' text-white ml-3'><i class="fa-regular fa-bell"></i></Nav.Link>
+
               </div>
 
 

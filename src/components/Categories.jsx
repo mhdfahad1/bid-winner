@@ -2,14 +2,20 @@ import React, { useEffect, useState } from 'react'
 import Menu from './Menu'
 import arrow from '../images/ArrowFatRight.png'
 import Rarrow from '../images/ArrowFatRightblue.png'
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import { getAssembliesAPI } from '../services/allAPi';
+import { getAssembliesAPI, getCategoryAPI, getSubcategoryAPI } from '../services/allAPi';
+import AddAssembly from './AddAssembly';
+import './Categories.css'
 
 function Categories() {
+  const [searchkey, setSearchKey] = useState("")
+  const [keyword, setKeyword] = useState("")
+  const [search, setSearch] = useState("")
+
+  const [category, setCategory] = useState([])
   const [assembly, setAssembly] = useState([])
+  const [subCats, setSubcats] = useState([])
+  // console.log(assembly);
   const [value, setValue] = useState(1)
-  console.log(value);
   const decrement = () => {
     setValue(value - 1)
   }
@@ -17,103 +23,142 @@ function Categories() {
     setValue(value + 1)
   }
 
+// get assemblies
   const getAssemby = async () => {
-    const result = await getAssembliesAPI()
-    if (result.status == 200) {
-      setAssembly(result.data)
+    const result = await getAssembliesAPI(keyword)
+    console.log(result);
+    if (result.status === 200) {
+      setAssembly(result?.data)
     } else {
-      alert(result.response.data)
+      alert(result?.response?.data)
     }
   }
+
+  // get categories
+  const getCatogory = async () => {
+    const result = await getCategoryAPI(searchkey)
+    console.log(result);
+    if (result.status === 200) {
+      setCategory(result?.data)
+    } else {
+      alert(result?.response?.data)
+    }
+  }
+  // get sub categories
+  const getSubcats = async () => {
+    const result = await getSubcategoryAPI(search)
+    console.log(result);
+    if (result.status === 200) {
+      setSubcats(result?.data)
+    } else {
+      alert(result?.response?.data)
+    }
+  }
+
   useEffect(() => {
     getAssemby()
-  }, [])
+    getCatogory()
+    getSubcats()
+  }, [searchkey, search, keyword])
   return (
+
     <div className='flex'>
       <Menu />
       {value === 1 ?
-        <div className=' p-7 w-[500px]'>
-          <div className='flex justify-between'>
-            <div className='flex '>
+        <div className=' p-7 w-[500px] h-[879px]'>
+          <div className='md:flex md:justify-between'>
+            <div className='flex'>
               <img onClick={decrement} width={'20px'} src={arrow} alt="" />
-              <h2 className='text-xl mt-1 ml-2 font-bold'>Categories</h2>
+              <h2 className='text-sm md:text-xl mt-2 ml-0 md:ml-2 font-bold'>Categories</h2>
             </div>
-            <div className='relative'>
-              <i class="fa-solid fa-magnifying-glass absolute mt-2"></i>
-              <input type="text" className='rounded-lg p-2 w-[250px]' placeholder='Search Categories' name="" id="" />
+            <div className='relative md:mt-0 mt-3'>
+              <i class="fa-solid fa-magnifying-glass absolute mt-2 pl-1"></i>
+              <input onChange={(e) => setSearchKey(e.target.value)} type="text" className='rounded-lg pl-8 w-[250px] h-[30px]' placeholder='Search Categories' name="" id="" />
             </div>
 
           </div>
-          <div className='bg-white rounded-lg w-[450px] h-[100%] mt-7 pl-4'>
+          <div className='bg-white rounded-lg w-[300px] md:w-[450px] md:h-[100%] h-[780px] mt-7 pl-4'>
             <table className='table '>
               <tr>
                 <th className='font-normal text-sm'>Sl No</th>
-                <th className='font-normal text-sm pl-10'>Name</th>
-                <th className='font-normal text-sm pl-10'>Type</th>
+                <th className='font-normal text-sm pl-3 md:pl-10'>Name</th>
+                <th className='font-normal text-sm md:pl-10'>Type</th>
               </tr>
-              <tr>
-                <td>1</td>
-                <td className='pl-10'>Fixtures</td>
-                <td className='flex pl-10'><span>C</span> <img onClick={increment} src={Rarrow} alt="" /></td>
-              </tr>
+              {category.length > 0 ?
+                category.map(item => (
+                  <tr>
+                    <td>{item.id}</td>
+                    <td className='pl-3 md:pl-10'>{item.name}</td>
+                    <td className='flex md:pl-10'><span>{item.type}</span> <img onClick={increment} src={Rarrow} alt="" /></td>
+                  </tr>
+                )) : ""
+              }
 
             </table>
           </div>
         </div>
         : value === 2 ?
-          <div className=' p-7 w-[500px]'>
-            <div className='flex justify-between'>
+          <div className=' p-7 w-[500px] h-[879px]'>
+            <div className='md:flex md:justify-between'>
               <div className='flex '>
                 <img onClick={decrement} width={'20px'} src={arrow} alt="" />
-                <h2 className='text-xl mt-1 ml-2 font-bold'>sub Categories</h2>
+                <h2 className='text-sm md:text-xl mt-2 ml-0 md:ml-2 font-bold'>sub Categories</h2>
               </div>
-              <div className='relative'>
-                <i class="fa-solid fa-magnifying-glass absolute mt-2"></i>
-                <input type="text" className='rounded-lg p-2 w-[250px]' placeholder='Search sub Categories' name="" id="" />
+              <div className='relative md:mt-0 mt-3'>
+                <i class="fa-solid fa-magnifying-glass absolute mt-2 pl-1"></i>
+                <input type="text" onChange={(e) => setSearch(e.target.value)} className='rounded-lg pl-8 w-[250px] h-[30px]' placeholder='Search sub Categories' name="" id="" />
               </div>
 
             </div>
-            <div className='bg-white rounded-lg w-[450px] h-[100%] mt-7 pl-4'>
+            <div className='bg-white rounded-lg w-[300px] md:w-[450px] md:h-[100%] h-[780px] mt-7 pl-4'>
               <table className='table '>
                 <tr>
                   <th className='font-normal text-sm'>Sl No</th>
-                  <th className='font-normal text-sm pl-10'>Name</th>
-                  <th className='font-normal text-sm pl-10'>Type</th>
+                  <th className='font-normal text-sm pl-3 md:pl-10'>Name</th>
+                  <th className='font-normal text-sm md:pl-10'>Type</th>
                 </tr>
-                <tr>
-                  <td>1</td>
-                  <td className='pl-10'>Fixtures</td>
-                  <td className='flex pl-10'><span>C</span> <img onClick={increment} src={Rarrow} alt="" /></td>
-                </tr>
+                {subCats.length > 0 ?
+                  subCats.map(item => (
+                    <tr>
+                      <td>{item.id}</td>
+                      <td className='pl-3 md:pl-10'>{item.name}</td>
+                      <td className='flex md:pl-10'><span>{item.type}</span> <img onClick={increment} src={Rarrow} alt="" /></td>
+                    </tr>
+                  )) : ""
+                }
 
               </table>
             </div>
           </div>
           : value === 3 ?
-            <div className=' p-7 w-[500px]'>
-              <div className='flex justify-between'>
+            <div className=' p-7 w-[500px] h-[879px]'>
+              <div className='md:flex md:justify-between'>
                 <div className='flex '>
                   <img onClick={decrement} width={'20px'} src={arrow} alt="" />
-                  <h2 className='text-xl mt-1 ml-2 font-bold'>Assemblies</h2>
+                  <h2 className='text-sm md:text-xl mt-2 ml-0 md:ml-2 font-bold'>Assemblies</h2>
                 </div>
-                <div className='relative'>
-                  <i class="fa-solid fa-magnifying-glass absolute mt-2"></i>
-                  <input type="text" className='rounded-lg p-2 w-[250px]' placeholder='Search assemblies' name="" id="" />
+                <div className='relative md:mt-0 mt-3'>
+                  <i class="fa-solid fa-magnifying-glass absolute mt-2 pl-1"></i>
+                  <input type="text" onChange={(e) => setKeyword(e.target.value)} className='rounded-lg pl-8 w-[250px] h-[30px]' placeholder='Search Assemblies' name="" id="" />
                 </div>
 
               </div>
-              <div className='bg-white rounded-lg w-[450px] h-[100%] mt-7 pl-4'>
+              <div className='bg-white rounded-lg w-[300px] md:w-[450px] md:h-[100%] h-[780px] mt-7 pl-4'>
                 <table className='table '>
                   <tr>
                     <th className='font-normal text-sm'>Sl No</th>
-                    <th className='font-normal text-sm pl-10'>Name</th>
-                    <th className='font-normal text-sm pl-10'>Type</th>
+                    <th className='font-normal text-sm pl-3 md:pl-10'>Name</th>
+                    <th className='font-normal text-sm md:pl-10'>Type</th>
                   </tr>
-                  <tr>
-                    <td>1</td>
-                    <td className='pl-10'>Fixtures</td>
-                    <td className='flex pl-10'><span>C</span> <i class="fa-solid fa-circle-plus mt-1" style={{ color: "green" }}></i></td>
-                  </tr>
+                  {assembly.length > 0 ?
+                    assembly.map(item => (
+                      <tr>
+                        <td>{item.slNo}</td>
+                        <td className='pl-3 md:pl-10'>{item.name}</td>
+                        <td className='flex md:pl-10'><span>{item.type}</span> <AddAssembly dispaydata={item} /></td>
+                      </tr>
+                    )) : ""
+                  }
 
                 </table>
               </div>
