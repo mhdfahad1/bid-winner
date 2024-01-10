@@ -91,7 +91,7 @@ function Categories() {
                     <td className='pl-3 md:pl-10'>{item.name}</td>
                     <td className='flex md:pl-10'><span>{item.type}</span> <img onClick={increment} src={Rarrow} alt="" /></td>
                   </tr>
-                )) : ""
+                )) : <p className='text-center text-danger text-xl mt-10'>Categories Not Available</p>
               }
 
             </table>
@@ -124,7 +124,7 @@ function Categories() {
                       <td className='pl-3 md:pl-10'>{item.name}</td>
                       <td className='flex md:pl-10'><span>{item.type}</span> <img onClick={increment} src={Rarrow} alt="" /></td>
                     </tr>
-                  )) : ""
+                  )) : <p className='text-center text-danger text-xl mt-10'>Sub Categories Not Available</p>
                 }
 
               </table>
@@ -157,7 +157,7 @@ function Categories() {
                         <td className='pl-3 md:pl-10'>{item.name}</td>
                         <td className='flex md:pl-10'><span>{item.type}</span> <AddAssembly dispaydata={item} /></td>
                       </tr>
-                    )) : ""
+                    )) : <p className='text-center text-danger text-xl mt-10'>Assemblies Not Available</p>
                   }
 
                 </table>
